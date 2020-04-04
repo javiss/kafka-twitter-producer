@@ -1,0 +1,29 @@
+openapi: 3.0.0
+info:
+  title: Twitter streams API consumer
+  description: >-
+    Creates a thread that uses the twitter API to fech tweets with a
+    specic hastag and send them via kafka, after a few minutes it stops.
+  version: 1.0.0
+
+paths:
+  /consumer/startstream:
+    summary: Initiates the search
+    get:
+      summary: ''
+      description: ''
+      operationId: searchHashtag
+      parameters:
+        - $ref: '#/components/parameters/hashtag'
+      responses:
+        '200':
+          description: Search initiated
+components:
+  parameters:
+    hashtag:
+      name: hashtag
+      in: query
+      description: The hashtag to be searched
+      required: true
+      schema:
+        type: string

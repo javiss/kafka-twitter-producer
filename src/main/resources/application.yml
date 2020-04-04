@@ -1,0 +1,16 @@
+spring:
+  profiles: local
+
+twitter:
+  config:
+    consumerKey: <FILL THIS>
+    consumerSecret: <FILL THIS>
+    token: <FILL THIS>
+    secret: <FILL THIS>
+
+kafka:
+  config:
+    bootstrapServers: <FILL THIS>
+    clientId: <FILL THIS>
+
+
