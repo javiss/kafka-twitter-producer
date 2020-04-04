@@ -5,31 +5,6 @@ networks:
     driver: bridge
 
 services:
-
-  app:
-    restart: always
-    build: ./nginx
-    working_dir: /app
-    volumes:
-      - ../../kafka-twitter:/app
-      - ~/.m2:/root/.m2
-    expose:
-      - 8080
-    command: mvn clean install spring-boot:run -Dspring-boot.run.arguments="ARGUMENTS_HERE"
-    depends_on:
-      - zookeeper
-      - kafka-s1s
-  nginx:
-    container_name: nginx-contaner
-    image: nginx:1.13
-    restart: always
-    ports:
-      - 8080:8080
-    volumes:
-      - ./nginx/conf.d:/etc/nginx/conf.d
-    depends_on:
-      - app
-
   zookeeper:
     image: 'zookeeper:3.5.7'
     restart: always
@@ -59,3 +34,28 @@ services:
       - '9300:9300'
     volumes:
       - './elasticsearch_data:/bitnami/elasticsearch/data'
+
+  app:
+    restart: always
+    build: ./nginx
+    working_dir: /app
+    volumes:
+      - ../../kafka-twitter:/app
+      - ~/.m2:/root/.m2
+    expose:
+      - 8080
+    command: mvn clean install spring-boot:run -Dspring-boot.run.arguments="${SPRINGARGS}"
+    depends_on:
+      - zookeeper
+      - kafka-s1
+
+  nginx:
+    container_name: nginx-contaner
+    image: nginx:1.13
+    restart: always
+    ports:
+      - 8080:8080
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - app

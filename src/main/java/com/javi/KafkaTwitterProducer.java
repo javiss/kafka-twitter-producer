@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class KafkaTwitter {
+public class KafkaTwitterProducer {
 
     public static void main(String[] args) {
-        SpringApplication.run(KafkaTwitter.class, args);
+        SpringApplication.run(KafkaTwitterProducer.class, args);
     }
 
 }

@@ -34,6 +34,7 @@ public class TwitterProducer {
     }
 
     public void start(String terms) {
+
         Client client = this.twitterClient.createClient(terms);
 
         Runtime.getRuntime().addShutdownHook(new Thread(client::stop));
