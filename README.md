@@ -3,8 +3,9 @@
 
 ### To improve
 
-Batching
-
-IAC
  - kafka
  - elastic
+ - kafka auth
+ - kafka batching
+
+IAC
