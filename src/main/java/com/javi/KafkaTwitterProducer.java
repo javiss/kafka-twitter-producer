@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class KafkaTwitterProducer {
 
     public static void main(String[] args) {
+        System.out.println("testing1");
         SpringApplication.run(KafkaTwitterProducer.class, args);
     }
 
