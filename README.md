@@ -7,5 +7,6 @@
  - elastic
  - kafka auth
  - kafka batching
+ - avro
 
 IAC
