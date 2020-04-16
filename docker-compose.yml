@@ -3,14 +3,14 @@ version: '3.1'
 services:
   app:
     restart: always
-    build: ./nginx
+    build: ./docker/nginx
     working_dir: /app
     volumes:
-      - ../../kafka-twitter:/app
+      - ./:/app
       - ~/.m2:/root/.m2
     expose:
       - 8080
-    command: mvn clean install spring-boot:run -Dspring-boot.run.arguments="${SPRINGARGS}"
+    command: mvn clean install spring-boot:run -Dspring-boot.run.arguments="${D_SPRING_ARGS}"
 
   nginx:
     container_name: nginx-contaner
