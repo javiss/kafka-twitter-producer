@@ -82,6 +82,10 @@
                                 <performBeanValidation>true</performBeanValidation>
                                 <meminitial>128m</meminitial>
                                 <maxmem>256m</maxmem>
+                                <jvmArguments>
+                                    -Xms128m
+                                    -Xmx256m
+                                </jvmArguments>
                             </configOptions>
                         </configuration>
                     </execution>
