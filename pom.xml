@@ -57,7 +57,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <source>11</source>s
+                    <source>11</source>
                     <target>11</target>
                 </configuration>
             </plugin>
@@ -80,6 +80,8 @@
                                 <dateLibrary>joda</dateLibrary>
                                 <serializableModel>true</serializableModel>
                                 <performBeanValidation>true</performBeanValidation>
+                                <meminitial>128m</meminitial>
+                                <maxmem>256m</maxmem>
                             </configOptions>
                         </configuration>
                     </execution>
